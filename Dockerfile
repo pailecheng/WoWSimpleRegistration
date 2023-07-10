@@ -15,7 +15,7 @@ RUN apk update && apk add nginx && \
     touch /run/nginx/nginx.pid && \
     chmod 755 /run.sh && \
     apk del m4 autoconf make gcc g++ linux-headers
-RUN chmod +r ./application/loader.php
+RUN chmod 444 ./application/loader.php
 EXPOSE 80
 EXPOSE 9000
 
