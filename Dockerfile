@@ -5,6 +5,14 @@ ADD index.php /var/www/html/
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 COPY application/loader.php /var/www/html/application/
+COPY application/vendor/autoload.php /var/www/html/application/vendor/
+COPY application/config/config.php /var/www/html/application/config/
+COPY application/include/core_handler.php /var/www/html/application/include/
+COPY application/include/functions.php /var/www/html/application/include/
+COPY application/include/database.php /var/www/html/application/include/
+COPY application/include/user.php /var/www/html/application/include/
+COPY application/include/vote.php /var/www/html/application/include/
+COPY application/include/status.php /var/www/html/application/include/
 RUN apk update && \
     apk add nginx && \
     apk add m4 autoconf make gcc g++ linux-headers && \
