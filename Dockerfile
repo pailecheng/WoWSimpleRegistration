@@ -3,6 +3,7 @@ ADD default.conf /
 ADD index.php /
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
+ADD loader.php /var/www/html/application/
 RUN apk update && apk add nginx && \
     apk add m4 autoconf make gcc g++ linux-headers && \
     docker-php-ext-install pdo_mysql opcache mysqli && \
@@ -15,7 +16,7 @@ RUN apk update && apk add nginx && \
     touch /run/nginx/nginx.pid && \
     chmod 755 /run.sh && \
     apk del m4 autoconf make gcc g++ linux-headers
-RUN chmod 755 ./application/loader.php
+RUN chmod 755 /var/www/html/application/loader.php
 EXPOSE 80
 EXPOSE 9000
 
