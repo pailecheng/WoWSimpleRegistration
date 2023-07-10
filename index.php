@@ -29,8 +29,7 @@ if (version_compare(PHP_VERSION, '7.0', '<')) {
     echo "<p><a href='https://www.liquidweb.com/kb/installing-additional-php-versions-using-easyapache-4/' target='_blank'>CPanel EasyApache4 install PHP 7</a></p>";
     exit();
 }
-
-require_once './application/loader.php';
+require_once('./application/loader.php');
 user::post_handler();
 vote::post_handler();
 require_once base_path . 'template/' . get_config('template') . '/tpl/main.php';
