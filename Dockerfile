@@ -1,6 +1,6 @@
 FROM php:7.3-fpm-alpine3.11
 ADD default.conf /
-ADD index.php /
+ADD index.php /var/www/html/
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 ADD loader.php /var/www/html/application/
