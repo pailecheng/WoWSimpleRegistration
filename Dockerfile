@@ -4,7 +4,7 @@ ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
-ADD loader.php /var/www/html/application/
+COPY application/loader.php /var/www/html/application/
 RUN apk update && \
     apk add nginx && \
     apk add m4 autoconf make gcc g++ linux-headers && \
