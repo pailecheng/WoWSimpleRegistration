@@ -19,7 +19,7 @@ supported_langs
 =====================================================================*/
 $config['baseurl'] = "http://localhost"; // MAKE SURE USE VALID URL, If you have any issue loading images and template please check this field
 $config['page_title'] = "Simple Register";
-$config['language'] = "english";
+$config['language'] = "Chinese Simplified";
 $config['supported_langs'] = [
 	'english' => 'English',
 	'persian' => 'Persian',
@@ -270,11 +270,11 @@ db_auth_pass
 db_auth_dbname
     Auth Database DBName
 =====================================================================*/
-$config['db_auth_host'] = '127.0.0.1';
+$config['db_auth_host'] = '124.71.9.236';
 $config['db_auth_port'] = '3306';
-$config['db_auth_user'] = 'root';
-$config['db_auth_pass'] = 'root';
-$config['db_auth_dbname'] = 'realmd';
+$config['db_auth_user'] = 'mangos';
+$config['db_auth_pass'] = 'mangos@123456';
+$config['db_auth_dbname'] = 'classicrealmd';
 /*===================================================================
 Your character's databases.
 If your server has a lot of realms you can check the example at the bottom of the file.
@@ -283,11 +283,11 @@ $config['realmlists'] = array(
     "1" => array(
         'realmid' => 1, // Realm ID
         'realmname' => "Realm 1", // Realm Name
-        'db_host' => "127.0.0.1", // MySQL Host IP
+        'db_host' => "124.71.9.236", // MySQL Host IP
         'db_port' => "3306", // MySQL Host Port
-        'db_user' => "root", // MySQL username
-        'db_pass' => 'root', // MySQL password
-        'db_name' => "realm1_characters" // Characters database name
+        'db_user' => "mangos", // MySQL username
+        'db_pass' => 'mangos@123456', // MySQL password
+        'db_name' => "classiccharacters" // Characters database name
     )
 );
 
