@@ -7,7 +7,8 @@ COPY application/ /var/www/html/application/
 RUN apk update && \
     apk add nginx && \
     apk add m4 autoconf make gcc g++ linux-headers && \
-    docker-php-ext-install pdo_mysql opcache mysqli && \
+    apk add gmp-dev && \ # 添加 GMP 扩展的依赖项
+    docker-php-ext-install pdo_mysql opcache mysqli gmp && \ # 安装 GMP 扩展
     pecl install -o -f redis && \
     rm -rf /tmp/pear && \
     docker-php-ext-enable redis && \
