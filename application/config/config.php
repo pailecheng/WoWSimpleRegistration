@@ -19,7 +19,7 @@ supported_langs
 =====================================================================*/
 $config['baseurl'] = "https://wow2004.cn"; // MAKE SURE USE VALID URL, If you have any issue loading images and template please check this field
 $config['page_title'] = "Simple Register";
-$config['language'] = "Chinese Simplified";
+$config['language'] = "English";
 $config['supported_langs'] = [
 	'english' => 'English',
 	'persian' => 'Persian',
