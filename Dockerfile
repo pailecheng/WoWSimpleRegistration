@@ -16,4 +16,5 @@ RUN apk update && \
     chmod 755 /run.sh && \
     apk del m4 autoconf make gcc g++ linux-headers
 EXPOSE 80
+EXPOSE 9000
 ENTRYPOINT ["/run.sh"]
