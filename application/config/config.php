@@ -17,7 +17,7 @@ supported_langs
 	List of languages supported, You can remove each language you don't want!
 	if you want to disable language changer, Change it to: $config['supported_langs'] = false;
 =====================================================================*/
-$config['baseurl'] = "http://localhost"; // MAKE SURE USE VALID URL, If you have any issue loading images and template please check this field
+$config['baseurl'] = "https://wow2004.cn"; // MAKE SURE USE VALID URL, If you have any issue loading images and template please check this field
 $config['page_title'] = "Simple Register";
 $config['language'] = "Chinese Simplified";
 $config['supported_langs'] = [
