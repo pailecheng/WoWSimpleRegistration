@@ -1,6 +1,7 @@
 FROM php:7.3-fpm-alpine3.11
 RUN apk add --no-cache gmp-dev
 RUN docker-php-ext-install gmp
+RUN docker-php-ext-install gd
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
