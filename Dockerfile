@@ -11,9 +11,8 @@ RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev
 
 # 安装 GD 扩展
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-png=/usr/include/ && \
-    docker-php-ext-install gd
+    docker-php-ext-install -j$(nproc) gd
 
-# 其他指令继续保持不变
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
