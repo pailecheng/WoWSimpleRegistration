@@ -6,13 +6,14 @@ RUN apk add --no-cache gmp-dev
 # 安装 GMP 扩展
 RUN docker-php-ext-install gmp
 
-# 添加 GD 扩展的依赖项
+# 安装 GD 相关依赖项，包括 libpng、libjpeg 和 freetype
 RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev
 
-# 安装 GD 扩展
-RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-png=/usr/include/ && \
+# 配置并安装 GD 扩展，指定所需的库路径
+RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-png-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd
 
+# 其他指令继续保持不变
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
