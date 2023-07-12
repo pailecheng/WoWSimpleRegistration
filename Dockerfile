@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine3.14
+FROM php:8.2-fpm-alpine3.17
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
