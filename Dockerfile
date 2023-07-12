@@ -6,25 +6,9 @@ ADD php.ini /usr/local/etc/php/
 COPY application/ /var/www/html/application/
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache \
-    nginx \
-    gmp-dev \
-    libpng-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
-    libxml2-dev \
-    libxslt-dev \
-    libzip-dev && \
+    apk add --no-cache nginx gmp-dev libpng-dev libjpeg-turbo-dev freetype-dev libxml2-dev libxslt-dev libzip-dev && \
     docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ && \
-    docker-php-ext-install -j$(nproc) \
-    gmp \
-    gd \
-    soap \
-    mbstring \
-    pdo \
-    pdo_mysql \
-    zip \
-    xsl && \
+    docker-php-ext-install -j$(nproc) gmp gd soap mbstring pdo pdo_mysql zip xsl && \
     mkdir /run/nginx && \
     touch /run/nginx/nginx.pid && \
     chmod 755 /run.sh && \
