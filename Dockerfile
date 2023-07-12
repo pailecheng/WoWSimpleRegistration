@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine3.11
+FROM php:7.3-fpm-alpine3.12
 
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
@@ -6,7 +6,7 @@ ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 COPY application/ /var/www/html/application/
 
-RUN apk update && \
+RUN aapk update && apk upgrade \
     apk add --no-cache \
     nginx \
     gmp-dev \
