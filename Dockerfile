@@ -1,12 +1,11 @@
 FROM php:7.3-fpm-alpine3.12
-
 ADD default.conf /etc/nginx/conf.d/
 ADD index.php /var/www/html/
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 COPY application/ /var/www/html/application/
-
-RUN apk update && apk upgrade \
+RUN apk update && \
+    apk upgrade && \
     apk add --no-cache \
     nginx \
     gmp-dev \
@@ -30,7 +29,6 @@ RUN apk update && apk upgrade \
     touch /run/nginx/nginx.pid && \
     chmod 755 /run.sh && \
     apk del gmp-dev libpng-dev libjpeg-turbo-dev freetype-dev libxml2-dev libxslt-dev libzip-dev
-
 EXPOSE 80
 EXPOSE 9000
 
