@@ -5,7 +5,7 @@ ADD index.php /var/www/html/
 ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 COPY application/ /var/www/html/application/
-
+RUN apk add --no-cache gmp
 RUN apk update && apk add nginx && \
     apk add m4 autoconf make gcc g++ linux-headers && \
     docker-php-ext-install pdo_mysql opcache mysqli && \
