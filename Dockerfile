@@ -6,7 +6,7 @@ ADD run.sh /
 ADD php.ini /usr/local/etc/php/
 COPY application/ /var/www/html/application/
 
-RUN aapk update && apk upgrade \
+RUN apk update && apk upgrade \
     apk add --no-cache \
     nginx \
     gmp-dev \
